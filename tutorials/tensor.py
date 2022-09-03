@@ -1,3 +1,4 @@
+# Tutorial: https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html
 import torch
 import numpy as np
 
@@ -28,7 +29,7 @@ print(f"Shape of ones_tensor: {ones_tensor.shape}")
 print(f"Datatype of complex tensor: {complex_tensor.dtype}")
 print(f"Device complex tensor is stored on: {complex_tensor.device}")
 
-# lots of operations on tensors https://pytorch.org/docs/stable/torch.html
+# lots of useful operations on tensors https://pytorch.org/docs/stable/torch.html
 tensor = torch.ones(4, 4)
 if torch.cuda.is_available():
     tensor = tensor.to("cuda") # move tensor to the GPU if available
@@ -46,7 +47,7 @@ print(f"Cat tensor t1: \n {t1}")
 t2 = torch.stack([tensor, tensor, tensor]) # dimensional
 print(f"Stacked tensor t2: \n {t2}")
 
-# Arithmetic
+# Arithmetic, basically just use @ for matrix multiply and * for element-wise multiply
 print(f"Tensor T is: \n {tensor.T}") # T = transpose, NEAT!
 # This computes the matrix multiplication between two tensors. y1, y2, y3 will have the same value
 y1 = tensor @ tensor.T
